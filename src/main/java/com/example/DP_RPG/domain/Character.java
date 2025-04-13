@@ -16,13 +16,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Builder
 public class Character {
 
     @Id
@@ -31,6 +34,7 @@ public class Character {
 
     private String name;
 
+    @Setter
     private String warName;
 
     @Enumerated(EnumType.STRING)
@@ -60,6 +64,16 @@ public class Character {
     public boolean hasAmulet() {
         return magicItems.stream()
                 .anyMatch(item -> item.getMagicType() == MagicType.AMULET);
+    }
+
+    public void addMagicItem(MagicItem magicItem) {
+        magicItems.add(magicItem);
+        magicItem.setCharacter(this);
+    }
+
+    public void removeMagicItem(MagicItem magicItem) {
+        magicItems.remove(magicItem);
+        magicItem.setCharacter(null);
     }
 
     public Optional<MagicItem> getAmulet() {

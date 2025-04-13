@@ -1,5 +1,7 @@
 package com.example.DP_RPG.records;
 
+import com.example.DP_RPG.enums.CharacterType;
+
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -12,8 +14,7 @@ public record CharacterCreateDTO(
         @NotBlank(message = "War Name is required")
         String warName,
 
-        @NotNull(message = "Character Type is required ")
-        String characterType,
+        @NotNull(message = "Character Type is required ") CharacterType characterType,
 
         @NotNull(message = "Level is required")
         Integer level,
@@ -27,8 +28,4 @@ public record CharacterCreateDTO(
         @Min(value = 0, message = "Defense must be at least 0")
         @Max(value = 10, message = "Defense cannot exceed 10")
         Integer defense
-) {
-    public boolean isValidAttributeDistribution() {
-        return (strength + defense) <= 10;
-    }
-}
+) {}

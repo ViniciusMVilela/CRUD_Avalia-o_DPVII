@@ -12,13 +12,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Builder
 public class MagicItem {
 
     @Id
@@ -32,6 +35,7 @@ public class MagicItem {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "character_id")
+    @Setter
     private Character character;
 
     private Integer strength;

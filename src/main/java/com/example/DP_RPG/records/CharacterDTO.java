@@ -2,38 +2,18 @@ package com.example.DP_RPG.records;
 
 import java.util.List;
 
+import com.example.DP_RPG.enums.CharacterType;
+
 public record CharacterDTO(Long id,
                            String name,
-                           String adventurerName,
-                           String characterClass,
+                           String warName,
+                           CharacterType characterType,
                            Integer level,
                            Integer strength,
                            Integer defense,
+                           Integer totalStrength,
+                           Integer totalDefense,
                            List<MagicItemDTO> magicItems) {
 
-    public CharacterDTO(com.example.DP_RPG.domain.Character character, List<MagicItemDTO> items) {
-        this(
-                character.getId(),
-                character.getName(),
-                character.getWarName(),
-                character.getCharacterType().name(),
-                character.getLevel(),
-                character.getTotalStrength(),
-                character.getTotalDefense(),
-                items
-        );
-    }
 
-    public CharacterDTO(com.example.DP_RPG.domain.Character character) {
-        this(
-                character.getId(),
-                character.getName(),
-                character.getWarName(),
-                character.getCharacterType().name(),
-                character.getLevel(),
-                character.getTotalStrength(),
-                character.getTotalDefense(),
-                null
-        );
-    }
 }
