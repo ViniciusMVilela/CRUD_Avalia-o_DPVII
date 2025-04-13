@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Component;
 
 import com.example.DP_RPG.domain.MagicItem;
-import com.example.DP_RPG.records.MagicItemCreateDTO;
-import com.example.DP_RPG.records.MagicItemDTO;
+import com.example.DP_RPG.domain.records.MagicItemCreateDTO;
+import com.example.DP_RPG.domain.records.MagicItemDTO;
 
 @Component
 public class MagicItemAdapter {

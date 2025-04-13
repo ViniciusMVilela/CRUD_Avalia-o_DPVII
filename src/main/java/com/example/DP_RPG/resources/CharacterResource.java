@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.DP_RPG.records.CharacterCreateDTO;
-import com.example.DP_RPG.records.CharacterDTO;
-import com.example.DP_RPG.records.CharacterUpdateWarNameDTO;
-import com.example.DP_RPG.records.MagicItemDTO;
+import com.example.DP_RPG.domain.records.CharacterCreateDTO;
+import com.example.DP_RPG.domain.records.CharacterDTO;
+import com.example.DP_RPG.domain.records.CharacterUpdateWarNameDTO;
+import com.example.DP_RPG.domain.records.MagicItemDTO;
 import com.example.DP_RPG.service.CharacterService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -27,7 +27,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("api/character")
 @RequiredArgsConstructor
-@Tag(name = "Character", description = "API to Character")
+@Tag(name = "Character", description = "API for character manipulation")
 public class CharacterResource {
 
     private final CharacterService characterService;

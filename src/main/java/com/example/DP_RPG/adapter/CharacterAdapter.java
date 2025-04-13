@@ -7,9 +7,9 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Component;
 
 import com.example.DP_RPG.domain.Character;
-import com.example.DP_RPG.records.CharacterCreateDTO;
-import com.example.DP_RPG.records.CharacterDTO;
-import com.example.DP_RPG.records.MagicItemDTO;
+import com.example.DP_RPG.domain.records.CharacterCreateDTO;
+import com.example.DP_RPG.domain.records.CharacterDTO;
+import com.example.DP_RPG.domain.records.MagicItemDTO;
 
 @Component
 public class CharacterAdapter {

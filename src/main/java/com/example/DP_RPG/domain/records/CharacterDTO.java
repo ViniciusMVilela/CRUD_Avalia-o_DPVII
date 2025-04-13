@@ -1,4 +1,4 @@
-package com.example.DP_RPG.records;
+package com.example.DP_RPG.domain.records;
 
 import java.util.List;
 

@@ -7,8 +7,9 @@ import org.springframework.stereotype.Service;
 import com.example.DP_RPG.adapter.MagicItemAdapter;
 import com.example.DP_RPG.domain.MagicItem;
 import com.example.DP_RPG.enums.MagicType;
-import com.example.DP_RPG.records.MagicItemCreateDTO;
-import com.example.DP_RPG.records.MagicItemDTO;
+import com.example.DP_RPG.exception.ResourceNotFoundException;
+import com.example.DP_RPG.domain.records.MagicItemCreateDTO;
+import com.example.DP_RPG.domain.records.MagicItemDTO;
 import com.example.DP_RPG.repository.MagicItemRepository;
 
 import jakarta.transaction.Transactional;
@@ -35,7 +36,7 @@ public class MagicItemService {
 
     public MagicItemDTO findById(Long id) throws Exception {
         final MagicItem magicItem = magicItemRepository.findById(id).orElseThrow(() ->
-                new RuntimeException("Magic Item not found")
+                new ResourceNotFoundException("Magic Item not found")
         );
 
         return MagicItemAdapter.fromEntity(magicItem);

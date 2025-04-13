@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.DP_RPG.records.MagicItemCreateDTO;
-import com.example.DP_RPG.records.MagicItemDTO;
+import com.example.DP_RPG.domain.records.MagicItemCreateDTO;
+import com.example.DP_RPG.domain.records.MagicItemDTO;
 import com.example.DP_RPG.service.MagicItemService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -23,7 +23,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("api/magic-item")
 @RequiredArgsConstructor
-@Tag(name = "Magic Item", description = "API for Magic Items")
+@Tag(name = "Magic Item", description = "API for magic items manipulation")
 public class MagicItemResource {
 
     private final MagicItemService magicItemService;
